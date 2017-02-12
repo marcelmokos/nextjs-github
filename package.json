@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-github",
+  "version": "1.0.0",
+  "description": "next.js example using github api",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelmokos/nextjs-github.git"
+  },
+  "keywords": [
+    "nextjs",
+    "github",
+    "nodeschool",
+    "server-rendering",
+    "universal",
+    "application"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcelmokos/nextjs-github/issues"
+  },
+  "homepage": "https://github.com/marcelmokos/nextjs-github#readme"
+}

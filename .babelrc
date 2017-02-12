@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "next/babel",
+    "latest",
+    "stage-0"
+  ],
+  "plugins": [
+    "flow-react-proptypes",
+    "transform-flow-strip-types"
+  ],
+  "sourceMaps": true
+}
+

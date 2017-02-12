@@ -50,3 +50,41 @@ export const getCommitsForRepository = async (username = "marcelmokos", reposito
   ...
 };
 ```
+
+## step-3
+
+Request and display basic information about github user.
+
+
+```
+import React from "react";
+import Link from "next/prefetch"; // eslint-disable-line
+import {getUserByUsername, getUserReposByUsername} from "../api";
+
+type Repo = {
+  name: string,
+  stargazers_count: number,
+}
+
+type IndexProps = {
+  user: {
+    avatar_url: string,
+    login: string,
+    bio: string,
+  },
+  repos: Array<Repo>,
+}
+
+export default class Index extends React.Component {
+  static async getInitialProps({query}) {
+    return {
+      user: await getUserByUsername(query.user),
+      repos: await getUserReposByUsername(query.user),
+    };
+  }
+
+  props: IndexProps
+
+  render() { ... }
+}
+```

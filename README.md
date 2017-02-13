@@ -131,3 +131,59 @@ export default class Repo extends React.Component {
   }
 }
 ```
+
+## step-5
+
+install now globally
+
+```
+npm install -g now
+```
+
+then run deploy
+
+```
+now
+```
+
+and output will be
+
+```
+nextjs-github git:(step-4-end) ✗ now                     
+> Deploying ~/work/nextjs-github
+> No `name` in `package.json`, using nextjs-github
+> Using Node.js 7.0.0 (default)
+> Ready! https://nextjs-github-axtfrtzgmw.now.sh (copied to clipboard) [3s]
+> Upload [====================] 100% 0.0s
+> Sync complete (174.34kB) [4s] 
+> Initializing…
+> Building
+> ▲ npm install
+>  ‣ pre-commit@^1.2.2
+>  ‣ isomorphic-fetch@^2.2.1
+>  ‣ next@^2.0.0-beta
+>  ‣ react@^15.4.2
+> ✓ Using "yarn.lock"
+>  ‣ babel-plugin-flow-react-proptypes@^0.21.0
+>  ‣ eslint-plugin-import@^2.2.0
+>  ‣ eslint-plugin-jest@^1.0.2
+>  ‣ eslint-plugin-jsx@^0.0.2
+> ✓ Installed 733 modules [11s]
+> ▲ npm run build
+> > @ build /home/nowuser/src
+> > next build
+> > Using external babel configuration
+> > location: "/home/nowuser/src/.babelrc"
+> ▲ npm start
+> > @ start /home/nowuser/src
+> > next start
+> Deployment complete!
+
+```
+
+now you can visit page on https://marcelmokos-nextjs-github.now.sh/
+
+[![alt text][2]][1]
+
+  [1]: https://marcelmokos-nextjs-github.now.sh/
+  [2]: http://image.prntscr.com/image/51d2c361a938485eb3c7e728f8806f11.png (https://marcelmokos-nextjs-github.now.sh/)

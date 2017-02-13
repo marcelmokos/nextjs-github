@@ -17,14 +17,9 @@ export const getUserReposByUsername = async (username = "marcelmokos") => {
   return res.json();
 };
 
-function sleep(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
-
 export const getCommitsForRepository = async (username = "marcelmokos", repository = "nextjs-github") => {
   console.log("getCommitsForRepository");
   const res = await fetch(`${githubApi}/repos/${username}/${repository}/commits${accessToken}`);
-  await sleep(2000);
 
   return res.json();
 };

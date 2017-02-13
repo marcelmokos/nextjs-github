@@ -88,3 +88,46 @@ export default class Index extends React.Component {
   render() { ... }
 }
 ```
+
+## step-4
+
+Request and display basic information about repository commits.
+
+
+```javascript
+import React from "react";
+import Link from "next/prefetch"; // eslint-disable-line
+import {getCommitsForRepository} from "../api";
+
+type RepoProps = {
+  user: string,
+  repo: any,
+}
+
+export default class Repo extends React.Component {
+  static async getInitialProps({query}) {
+    return {
+      user: query.user,
+      repo: await getCommitsForRepository(query.user, query.repo),
+    };
+  }
+
+  props: RepoProps
+
+  render() {
+    const {user, repo} = this.props;
+
+    return (
+      <div>
+        <h1>Github repository</h1>
+        <Link href={`/?user=${user}`}>
+          <a>back to user</a>
+        </Link>
+
+        {...}
+
+      </div>
+    );
+  }
+}
+```

@@ -38,6 +38,14 @@ export default class Index extends React.Component {
 
       <div>
         <h2>Repositories</h2>
+        {repos.map(repo => (
+          <div key={repo.name}>
+            <Link href={`/repo?user=${user.login}&repo=${repo.name}`}>
+              <a>{repo.name}</a>
+            </Link>
+            ⭐{repo.stargazers_count}
+          </div>
+        ))}
       </div>
 
     </div>);

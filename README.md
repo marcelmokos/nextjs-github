@@ -56,7 +56,7 @@ export const getCommitsForRepository = async (username = "marcelmokos", reposito
 Request and display basic information about github user.
 
 
-```
+```javascript
 import React from "react";
 import Link from "next/prefetch"; // eslint-disable-line
 import {getUserByUsername, getUserReposByUsername} from "../api";

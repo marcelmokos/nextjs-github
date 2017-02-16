@@ -105,6 +105,10 @@ rules:
     -
       exceptMethods:
       - render
-      
+
   # Disabled because not working when used with flow proptypes
   react/no-unused-prop-types: 0
+
+  ### Next.js ###
+  # when next.js is used react do not have be in scope
+  react/react-in-jsx-scope: 0

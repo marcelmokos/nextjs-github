@@ -1,7 +1,6 @@
-// @flow
 import React from "react";
-import Layout from "../components/layout";
 import {getUserByUsername} from "../api";
+import Head from "next/head";
 
 
 type User = {
@@ -31,6 +30,7 @@ const UserInfo = ({user}: {user: User}) => (
 export default class Index extends React.Component {
   static async getInitialProps({query}) {
     return {
+      title: "Home",
       user: await getUserByUsername(query.user),
     };
   }
@@ -49,31 +49,30 @@ export default class Index extends React.Component {
 
     return (
       <div>
-        <Layout
-          title="Home"
-          url={url}
-        >
+        <Head>
+          <title>Hello</title>
+        </Head>
+
+        <div>
 
           <br />
 
-          <div>
-            <label htmlFor="input--username">
-              Github username:
-            </label>
-            <input
-              id="input--username"
-              type="text"
-              defaultValue={url.query.user || ""}
-              ref={(input) => { this.inputUsername = input; }}
-            />
-            <button onClick={this.redirectToUsername}>Change github username</button>
+          <label htmlFor="input--username">
+            Github username:
+          </label>
+          <input
+            id="input--username"
+            type="text"
+            defaultValue={url.query.user || ""}
+            ref={(input) => { this.inputUsername = input; }}
+          />
+          <button onClick={this.redirectToUsername}>Change github username</button>
 
-          </div>
+        </div>
 
-          <h2>Github User</h2>
-          <UserInfo user={user} />
+        <h2>Github User</h2>
+        <UserInfo user={user} />
 
-        </Layout>
 
       </div>);
   }

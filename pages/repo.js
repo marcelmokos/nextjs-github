@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layout";
+import Head from "next/head";
 import Link from "../components/link";
 import {getCommitsForRepository} from "../api";
 
@@ -18,10 +18,14 @@ export default class Repo extends React.Component {
   props: RepoProps
 
   render() {
-    const {url, repo} = this.props;
+    const {repo} = this.props;
 
     return (
-      <Layout title="Progresive render" url={url}>
+      <div>
+        <Head>
+          <title>Repository {repo.name}</title>
+        </Head>
+
         <div>
           <h2>Github repository</h2>
           <ul>
@@ -30,7 +34,7 @@ export default class Repo extends React.Component {
 
         </div>
 
-      </Layout>
+      </div>
     );
   }
 }

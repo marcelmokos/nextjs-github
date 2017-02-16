@@ -1,5 +1,5 @@
 import React, {Children} from "react";
-import Link from "next/prefetch"; // eslint-disable-line
+import Link from "next/link"; // eslint-disable-line
 import url from "url";
 
 type To = {
@@ -21,6 +21,7 @@ export default (props: LinkProps) => {
     <Link
       href={to ? url.format(to) : href}
       {...otherProps}
+      prefetch
     >{props.children}</Link>
   );
 };

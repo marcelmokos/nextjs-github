@@ -1,11 +1,14 @@
 import React from "react";
-import Layout from "../components/layout";
+import Head from "next/head";
 import Loading from "../components/loading";
 import NoSSR from "react-no-ssr";
 
 
-export default ({url}: Object) => (
-  <Layout title="Progresive render" url={url}>
+export default () => (
+  <div>
+    <Head>
+      <title>Progresive render</title>
+    </Head>
 
     <section>
       <h1>
@@ -32,5 +35,5 @@ export default ({url}: Object) => (
       }
     `}</style>
 
-  </Layout>
+  </div>
 );

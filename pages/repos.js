@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "../components/link";
-import Layout from "../components/layout";
+import Head from "next/head";
 import {getUserReposByUsername} from "../api";
 
 type TRepo = {
@@ -33,10 +33,10 @@ export default class UserRepos extends React.Component {
     const {url, repos} = this.props;
 
     return (
-      <Layout
-        title="Progresive render"
-        url={url}
-      >
+      <div>
+        <Head>
+          <title>Repositories</title>
+        </Head>
         <div>
           <h2>Repositories</h2>
           {repos instanceof Array ? repos.map(
@@ -50,7 +50,7 @@ export default class UserRepos extends React.Component {
             ) : null}
 
         </div>
-      </Layout>
+      </div>
 
     );
   }

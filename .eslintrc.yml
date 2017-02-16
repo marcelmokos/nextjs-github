@@ -105,6 +105,6 @@ rules:
     -
       exceptMethods:
       - render
-
+      
   # Disabled because not working when used with flow proptypes
   react/no-unused-prop-types: 0

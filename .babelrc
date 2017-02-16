@@ -8,6 +8,7 @@
     "flow-react-proptypes",
     "transform-flow-strip-types"
   ],
-  "sourceMaps": true
+  "sourceMaps": true,
+  "retainLines": true
 }
 

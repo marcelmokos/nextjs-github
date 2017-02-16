@@ -1,13 +1,13 @@
 
 [ignore]
 
-.*/node_modules/*
+.*/.history/*
 
 [include]
 
 [libs]
 
-.*/flow-typed/*
+flow-typed
 
 [options]
 

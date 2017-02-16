@@ -1,6 +1,6 @@
 import React from "react";
-import Head from "next/head";
 import Link from "../components/link";
+import Layout from "../components/layout";
 import {getCommitsForRepository} from "../api";
 
 type RepoProps = {
@@ -18,23 +18,28 @@ export default class Repo extends React.Component {
   props: RepoProps
 
   render() {
-    const {repo} = this.props;
+    const {repo, url} = this.props;
 
     return (
-      <div>
-        <Head>
-          <title>Repository {repo.name}</title>
-        </Head>
+      <Layout
+        url={url}
+        title={`Repository ${repo.name}`}
+      >
 
         <div>
           <h2>Github repository</h2>
           <ul>
-            {repo.map(commit => <Commit key={commit.sha} commit={commit} />)}
+            {repo.map(
+              commit => <Commit
+                key={commit.sha}
+                commit={commit}
+              />,
+            )}
           </ul>
 
         </div>
 
-      </div>
+      </Layout>
     );
   }
 }

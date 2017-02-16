@@ -187,3 +187,11 @@ now you can visit page on https://marcelmokos-nextjs-github.now.sh/
 
   [1]: https://marcelmokos-nextjs-github.now.sh/
   [2]: http://image.prntscr.com/image/51d2c361a938485eb3c7e728f8806f11.png (https://marcelmokos-nextjs-github.now.sh/)
+
+## step-6 refactor
+
+use of pages/_document.js for common layout
+use of components/layout for navigation
+some fixes and improvements
+
+https://marcelmokos-nextjs-github-refactor.now.sh/

@@ -1,6 +1,6 @@
 import React from "react";
+import Layout from "../components/layout";
 import {getUserByUsername} from "../api";
-import Head from "next/head";
 
 
 type User = {
@@ -48,10 +48,10 @@ export default class Index extends React.Component {
     const {url, user} = this.props;
 
     return (
-      <div>
-        <Head>
-          <title>Hello</title>
-        </Head>
+      <Layout
+        url={url}
+        title={`Hello ${url.query.user}`}
+      >
 
         <div>
 
@@ -74,6 +74,7 @@ export default class Index extends React.Component {
         <UserInfo user={user} />
 
 
-      </div>);
+      </Layout>
+    );
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "../components/link";
-import Head from "next/head";
+import Layout from "../components/layout";
 import {getUserReposByUsername} from "../api";
 
 type TRepo = {
@@ -33,10 +33,10 @@ export default class UserRepos extends React.Component {
     const {url, repos} = this.props;
 
     return (
-      <div>
-        <Head>
-          <title>Repositories</title>
-        </Head>
+      <Layout
+        url={url}
+        title="Repositories"
+      >
         <div>
           <h2>Repositories</h2>
           {repos instanceof Array ? repos.map(
@@ -50,8 +50,8 @@ export default class UserRepos extends React.Component {
             ) : null}
 
         </div>
-      </div>
 
+      </Layout>
     );
   }
 }

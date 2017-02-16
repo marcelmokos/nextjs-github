@@ -1,5 +1,5 @@
 import React, {Children} from "react";
-import Link from "next/link"; // eslint-disable-line
+import Link from "next/prefetch"; // eslint-disable-line
 import url from "url";
 
 type To = {

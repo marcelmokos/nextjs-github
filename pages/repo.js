@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "../components/link";
 import Layout from "../components/layout";
 import {getCommitsForRepository} from "../api";
+
 
 type RepoProps = {
   repo: any,
@@ -46,21 +46,19 @@ export default class Repo extends React.Component {
 
 const Commit = ({commit}: any) => (
   <li>
-    <Link href={commit.author.html_url}>
-      <a>
-        <img
-          src={commit.author.avatar_url}
-          alt="avatar"
-          style={{width: 120, height: 120}}
-        />
-      </a>
-    </Link>
+
+    <a href={commit.author.html_url}>
+      <img
+        src={commit.author.avatar_url}
+        alt="avatar"
+        style={{width: 120, height: 120}}
+      />
+    </a>
+
     <div>
       Username: {commit.author.login}
     </div>
-    <Link href={commit.url}>
-      <a>Commit url</a>
-    </Link>
+    <a href={commit.url}>Commit url</a>
     <p>{commit.commit.message}</p>
   </li>
 );

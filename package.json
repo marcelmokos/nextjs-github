@@ -17,7 +17,7 @@
   "author": "Marcel Mokoš <https://github.com/marcelmokos>",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "next": "2.0.0-beta.26",
+    "next": "beta",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-no-ssr": "^1.1.0",

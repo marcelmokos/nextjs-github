@@ -3,9 +3,8 @@ import Loading from "../components/loading";
 import Layout from "../components/layout";
 import NoSSR from "react-no-ssr";
 
-
 export default ({url}: {url: Object}) => (
-  <Layout url={url} title="Progresive render">
+  <Layout url={url} title="Progressive render">
 
     <section>
       <h1>

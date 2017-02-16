@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/layout";
 import {getUserByUsername} from "../api";
 
-
 type User = {
   avatar_url: string,
   login: string,

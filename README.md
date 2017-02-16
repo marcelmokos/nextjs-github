@@ -194,4 +194,4 @@ use of pages/_document.js for common layout
 use of components/layout for navigation
 some fixes and improvements
 
-https://marcelmokos-nextjs-github-refactor.now.sh/
+https://marcelmokos-nextjs-github-refactor.now.sh/?user=marcelmokos

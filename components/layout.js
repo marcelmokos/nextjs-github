@@ -1,47 +1,56 @@
 import React, {Children} from "react";
-import Link from "./link";
 import Head from "next/head";
-
-type Props = {
-  children: Children,
-  title?: string,
-  user?: string,
-  url: Object,
-}
+import Link from "./link";
 
 const Header = ({query}: {query: Object}) => (
   <header>
     <nav>
-      <Link to={{pathname: "/", query}}>
+      <Link
+        to={{pathname: "/", query}}
+      >
         <a>Home</a>
       </Link>
 
       {" | "}
 
-      <Link to={{pathname: "/repos", query}}>
+      <Link
+        to={{pathname: "/repos", query}}
+      >
         <a>Repositories</a>
       </Link>
 
       {" | "}
 
-      <Link to={{pathname: "/progressive", query}}>
+      <Link
+        to={{pathname: "/progressive", query}}
+      >
         <a>Progressive render</a>
       </Link>
     </nav>
   </header>
 );
 
-export default ({children, title = "This is the default title", url}: Props) => (
+type LayoutProps = {
+  children: Children,
+  title?: string,
+  url: Object,
+};
+
+export default (
+  {children, title = "This is the default title", url}: LayoutProps,
+) => (
   <div>
     <Head>
-      <title>{ title }</title>
+      <title>{title}</title>
     </Head>
 
-    <Header query={url.query} />
+    <Header
+      query={url.query}
+    />
 
-    { children }
+    {children}
 
-    <br/>
+    <br />
 
     <footer>
       I`m footer from components/layout

@@ -4,7 +4,10 @@ import Layout from "../components/layout";
 import NoSSR from "react-no-ssr";
 
 export default ({url}: {url: Object}) => (
-  <Layout url={url} title="Progressive render">
+  <Layout
+    url={url}
+    title="Progressive render"
+  >
 
     <section>
       <h1>
@@ -12,7 +15,9 @@ export default ({url}: {url: Object}) => (
       </h1>
     </section>
 
-    <NoSSR onSSR={<Loading />}>
+    <NoSSR
+      onSSR={<Loading />}
+    >
       <section>
         <h2>
           This section is

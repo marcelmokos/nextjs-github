@@ -19,6 +19,7 @@ plugins:
 
 settings:
   flowtype:
+    # with this option you do not have to add @flow in files
     onlyFilesWithFlowAnnotation: false
 
 env:
@@ -31,6 +32,7 @@ env:
 parserOptions:
   ecmaVersion: 2017
   sourceType: module
+  jsx: true
 
 rules:
   ### Different from airbnb config
@@ -41,7 +43,7 @@ rules:
   max-len:
     - error
     -
-      code: 100
+      code: 80
       ignoreComments: true
       ignoreTrailingComments: true
       ignoreStrings: true
@@ -79,7 +81,7 @@ rules:
   # require or disallow Yoda conditions
   yoda: [error, never, { exceptRange: true }]
 
-  # I prefer culry braces all the time
+  # add culry braces all the time
   curly: [error, all] # airbnb default: [error, multi-line]
 
   ### Import ###
@@ -95,19 +97,38 @@ rules:
   async-await/space-after-await: error
 
   ### React ###
-  # it is better to use jsx in js
+  # do not force jsx use js
   react/jsx-filename-extension: 0
 
-  ### Specific for this experiment project
-  # render can do not have use static
+  # jsx indent
+  react/jsx-indent:
+    - error
+    - 2
+  react/jsx-indent-props:
+    - error
+    - 2
+
+  # function composition over default props
+  react/require-default-props: 0
+  # put props on new line
+  react/jsx-first-prop-new-line: [error, multiline]
+  # put closing bracket on next line
+  react/jsx-closing-bracket-location: [error, line-aligned]
+  # put one property per line
+  react/jsx-max-props-per-line:
+  - error
+  -
+    maximum: 1
+
+  # Disabled because not working when used with flow prop types
+  react/no-unused-prop-types: 0
+
+  # render do not have use static
   class-methods-use-this:
     - error
     -
       exceptMethods:
       - render
-
-  # Disabled because not working when used with flow proptypes
-  react/no-unused-prop-types: 0
 
   ### Next.js ###
   # when next.js is used react do not have be in scope

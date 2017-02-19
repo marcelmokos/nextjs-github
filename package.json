@@ -3,18 +3,25 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "flow": "flow",
     "test": "jest --env=jsdom",
     "test:coverage": "yarn test -- --coverage",
-    "flow": "flow",
-    "lint": "eslint \"pages/**/*.js\" --cache",
+    "prettier-eslint": "prettier-eslint --write --trailing-comma \"all\" --bracket-spacing=false",
+    "lint": "eslint \"**/*.js\" --cache",
     "lint:fix": "yarn run lint -- --fix",
-    "lint:pre-commit": "yarn run lint -- --fix --rule no-console:2 --rule no-debugger:2"
+    "lint-staged": "lint-staged"
   },
   "pre-commit": [
-    "lint:pre-commit",
+    "lint-staged",
     "flow"
   ],
   "author": "Marcel Mokoš <https://github.com/marcelmokos>",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --rule no-console:2 --rule no-debugger:2",
+      "git add"
+    ]
+  },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "next": "beta",
@@ -44,6 +51,10 @@
     "flow-bin": "^0.39.0",
     "jest": "^18.1.0",
     "jest-cli": "^18.1.0",
-    "pre-commit": "^1.2.2"
+    "lint-staged": "^3.3.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^0.18.0",
+    "prettier-eslint": "^3.0.5",
+    "prettier-eslint-cli": "^1.2.0"
   }
 }

@@ -65,13 +65,14 @@ export default class Index extends React.Component {
             defaultValue={url.query.user || ""}
             ref={(input) => { this.inputUsername = input; }}
           />
-          <button onClick={this.redirectToUsername}>Change github username</button>
+          <button onClick={this.redirectToUsername}>
+            Change github
+          </button>
 
         </div>
 
         <h2>Github User</h2>
         <UserInfo user={user} />
-
 
       </Layout>
     );

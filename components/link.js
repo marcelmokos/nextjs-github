@@ -6,14 +6,14 @@ type To = {
   href: string,
   query?: Object,
   hash?: string,
-}
+};
 
 type LinkProps = {
   children: Children,
   href?: string,
   to?: To,
   prefetch: boolean,
-}
+};
 
 export default (props: LinkProps) => {
   const {to, href, ...otherProps} = props;
@@ -23,6 +23,8 @@ export default (props: LinkProps) => {
       href={to ? url.format(to) : href}
       prefetch
       {...otherProps}
-    >{props.children}</Link>
+    >
+      {props.children}
+    </Link>
   );
 };

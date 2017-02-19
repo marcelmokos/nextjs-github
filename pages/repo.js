@@ -2,11 +2,10 @@ import React from "react";
 import Layout from "../components/layout";
 import {getCommitsForRepository} from "../api";
 
-
 type RepoProps = {
   repo: any,
   url: Object,
-}
+};
 
 export default class Repo extends React.Component {
   static async getInitialProps({query}) {
@@ -15,7 +14,7 @@ export default class Repo extends React.Component {
     };
   }
 
-  props: RepoProps
+  props: RepoProps;
 
   render() {
     const {repo, url} = this.props;
@@ -29,12 +28,12 @@ export default class Repo extends React.Component {
         <div>
           <h2>Github repository</h2>
           <ul>
-            {repo.map(
-              commit => <Commit
+            {repo.map(commit => (
+              <Commit
                 key={commit.sha}
                 commit={commit}
-              />,
-            )}
+              />
+            ))}
           </ul>
 
         </div>
@@ -58,7 +57,9 @@ const Commit = ({commit}: any) => (
     <div>
       Username: {commit.author.login}
     </div>
-    <a href={commit.url}>Commit url</a>
+    <a href={commit.url}>
+      Commit url
+    </a>
     <p>{commit.commit.message}</p>
   </li>
 );

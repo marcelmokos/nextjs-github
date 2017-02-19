@@ -1,4 +1,4 @@
-import React from "react";
+import {Component} from "react";
 import Link from "../components/link";
 import Layout from "../components/layout";
 import {getUserReposByUsername} from "../api";
@@ -6,7 +6,7 @@ import {getUserReposByUsername} from "../api";
 type TRepo = {
   name: string,
   stargazers_count: number,
-}
+};
 
 const Repo = ({repo, user}: {repo: TRepo, user: string}) => (
   <div>
@@ -17,7 +17,7 @@ const Repo = ({repo, user}: {repo: TRepo, user: string}) => (
   </div>
 );
 
-export default class UserRepos extends React.Component {
+export default class UserRepos extends Component {
   static async getInitialProps({query}) {
     return {
       repos: await getUserReposByUsername(query.user),
@@ -39,16 +39,15 @@ export default class UserRepos extends React.Component {
       >
         <div>
           <h2>Repositories</h2>
-          {repos instanceof Array ? repos.map(
-              repo => (
-                <Repo
-                  key={repo.name}
-                  user={url.query.user || ""}
-                  repo={repo}
-                />
-              ),
-            ) : null}
-
+          {repos instanceof Array
+            ? repos.map(repo => (
+              <Repo
+                key={repo.name}
+                user={url.query.user || ""}
+                repo={repo}
+              />
+            ))
+            : null}
         </div>
 
       </Layout>

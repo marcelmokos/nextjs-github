@@ -12,20 +12,23 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const {title} = this.props;
-
     return (
-      <html lang="en">
+      <html
+        lang="en"
+      >
         <Head>
-          <meta charSet="utf-8" />
+          <meta
+            charSet="utf-8"
+          />
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <title>Default title</title>
         </Head>
 
-        <body className="custom_class">
+        <body
+          className="custom_class"
+        >
 
           <Main />
           <NextScript />
